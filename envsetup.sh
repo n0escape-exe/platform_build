@@ -567,6 +567,10 @@ function lunch()
         fi
     fi
 
+    local T=$(gettop)
+    $T/prebuilts/build-tools/linux-x86/bin/py3-cmd $T/vendor/custom/build/tools/barista.py $product
+    source_vendorsetup &>/dev/null
+
     # Validate the selection and set all the environment stuff
     _lunch_meat $product $release $variant
 
