@@ -478,13 +478,6 @@ function _lunch_meat()
     set_stuff_for_environment
     [[ -n "${ANDROID_QUIET_BUILD:-}" ]] || printconfig
 
-    if [[ -z "${ANDROID_QUIET_BUILD}" ]]; then
-        local spam_for_lunch=$(gettop)/build/make/tools/envsetup/spam_for_lunch
-        if [[ -x $spam_for_lunch ]]; then
-            $spam_for_lunch
-        fi
-    fi
-
     destroy_build_var_cache
 
     if [[ -n "${CHECK_MU_CONFIG:-}" ]]; then
